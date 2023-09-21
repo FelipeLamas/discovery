@@ -1,15 +1,33 @@
 @import url('assets/css/reset.css');
 @import url('assets/css/global.css');
 
+:root {
+  --text-color: white;
+  --bg-url: url(assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+}
+
 
 body {
 /* ShortHand: color, image, reapet, position / size */
-  background: url('assets/bg-mobile.jpg') no-repeat top center / cover;
+  background: var(--bg-url) no-repeat top center / cover;
 }
 
 body * {
   font-family: 'Inter', sans-serif;
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 .container {
@@ -23,7 +41,7 @@ body * {
   font-weight: 500;
   line-height: 1.5rem;
   margin-top: 0.5rem;
-  color: var(--title-color)
+  color: var(--text-color)
 }
 
 .profile {
@@ -34,6 +52,10 @@ body * {
 .profile img{
   width: 7rem;
 }
+
+/* Switch  */
+
+
 
 /* Links */
 
@@ -51,8 +73,8 @@ ul li a{
   font-size: 1.2rem;
   font-weight: bold;
   padding: 1rem 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 0.0625rem solid rgba(255, 255, 255, 0.5);
+  background: var(--surface-color);
+  border: 0.0625rem solid var(--stroke-color);
   border-radius: 0.5rem;
 
   backdrop-filter: blur(0.25rem);
@@ -61,8 +83,8 @@ ul li a{
 }
 /* pseudo-selector */
 ul li a:hover{
-  border: 0.09375rem solid white;
-  background: rgba(255, 255, 255, 0.05);
+  border: 0.09375rem solid var(--text-color);
+  background: var(--surface-color-hover);
 }
 
 /* Social Links */
@@ -85,10 +107,11 @@ ul li a:hover{
 }
 
 .social-links a:hover{
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--highlight-color);
 }
 
 footer {
   padding: 1.5rem 0;
   text-align: center;
+  font-size: 0.875rem;
 }
