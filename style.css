@@ -56,15 +56,31 @@ body * {
 
 /* Switch  */
 
+.switch {
+  position: relative;
+  width: 4rem;
+  margin: 0.25rem auto;
+}
+
 .switch button {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   background-image: var(--switch-bg-url);
   background-repeat: no-repeat;
   background-position: center;
   background-color: white;
   border: 0;
   border-radius: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 0;
+  z-index: 1;
+}
+
+.light .switch button {
+  right: 0;
+  left: initial;
 }
 
 .switch span{
